@@ -35,6 +35,19 @@
             ]
           }
         ]
+      },
+      {
+        "group": "Guides",
+        "pages": [
+          "setup/selfhosted/introduction",
+          {
+            "group": "Installation",
+            "pages": [
+              "setup/selfhosted/unifier",
+              "setup/selfhosted/unifier-micro"
+            ]
+          }
+        ]
       }
     ],
     "global": {
