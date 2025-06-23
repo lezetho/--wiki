@@ -2,8 +2,6 @@
 title: Manual rollback
 ---
 
-# Manual rollback
-
 Unifier has an automatic rollback system to let the bot continue operating normally even after upgrade failures. However, this system isn't perfect - there may be cases where the rollback fails, and you will need to perform a manual rollback to repair the bot.
 
 Fortunately, the past version of the bot will be stored in the `old` directory inside your Unifier root directory. Here, you will be able to find configuration, data, and Unifier code files that were being used pre-upgrade. You will need to copy these files into their respective folders, so if `bridge.py` is in `old/cogs`, you will need to copy it into the `cogs` folder.

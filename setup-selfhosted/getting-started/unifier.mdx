@@ -1,18 +1,16 @@
 ---
-title: Unifier
-description: Install guide for Unifier v3.0.0 and newer.
+title: "Unifier"
+description: "Install guide for Unifier v3.0.0 and newer."
 ---
 
-# Unifier
-
 <Info>
-This guide is for **Unifier v3.0.0 and newer**. If you're installing an older version of Unifier, consult the [legacy guide](unifier-older-versions.md) instead.
+  This guide is for **Unifier v3.0.0 and newer**. If you're installing an older version of Unifier, consult the [legacy guide](unifier-older-versions.md) instead.
 </Info>
 
 <Warning>
-**Used the (Legacy) Installer?**
+  **Used the (Legacy) Installer?**
 
-Unifier cannot be installed using the legacy installer. Please use the integrated installer instead.
+  Unifier cannot be installed using the legacy installer. Please use the integrated installer instead.
 </Warning>
 
 ## Requirements
@@ -20,25 +18,25 @@ Unifier cannot be installed using the legacy installer. Please use the integrate
 ### Minimum system requirements
 
 <Warning>
-Memory requirements will depend on many factors such as but not limited to cached messages and number of servers the bot is in.
+  Memory requirements will depend on many factors such as but not limited to cached messages and number of servers the bot is in.
 </Warning>
 
 Unifier requires the following:
 
-* 64-bit CPU that can run Python 3.9 or newer
-* At least 100MB of available RAM, meaning excluding RAM already being used by the system and other apps
-* An internet connection
-* Python 3.9 or newer:
-  * **Optimized** and **Balanced** installations require Python **3.12** or above.
-  * **Stable** requires Python **3.9** or above.
+- 64-bit CPU that can run Python 3.9 or newer
+- At least 100MB of available RAM, meaning excluding RAM already being used by the system and other apps
+- An internet connection
+- Python 3.9 or newer:
+  - **Optimized** and **Balanced** installations require Python **3.12** or above.
+  - **Stable** requires Python **3.9** or above.
 
 ### Recommended system requirements
 
 We recommend the following for Unifier:
 
-* 64-bit CPU based on x86\_64 or arm64/aarch64 that can run Python 3.12 or newer
-* 20 Mbps or faster internet connection
-* Python 3.12 or newer
+- 64-bit CPU based on x86_64 or arm64/aarch64 that can run Python 3.12 or newer
+- 20 Mbps or faster internet connection
+- Python 3.12 or newer
 
 ## Running Unifier
 
@@ -56,7 +54,7 @@ On Windows, run `./run.bat`.
 
 Pterodactyl containers run on top of a Linux system, meaning that it can run bash programs. However, some Eggs might not support this, and may restrict you to running Python files only.
 
-If you can customize the startup command, set it to `sh run.sh`.&#x20;
+If you can customize the startup command, set it to `sh run.sh`. 
 
 If you can customize the "App PY file" field, set it to `boot/bootloader.py`.
 
@@ -116,35 +114,35 @@ Type "y" to install Unifier, then follow the instructions provided by the instal
 ## Using System Manager
 
 <Danger>
-**WARNING:** Do **NOT** grant anyone access to admin commands! Certain admin commands **have the potential to ruin your system if used maliciously**!
+  **WARNING:** Do **NOT** grant anyone access to admin commands\! Certain admin commands **have the potential to ruin your system if used maliciously**\!
 
-We **STRONGLY ENCOURAGE** you to **NOT** modify System Manager whatsoever for this very reason.
+  We **STRONGLY ENCOURAGE** you to **NOT** modify System Manager whatsoever for this very reason.
 </Danger>
 
 Unifier has a powerful System Manager to let instance owners effortlessly run commands and manage extensions.
 
 Here's some basic commands to get you started:
 
-* `u!system reload <extension>`: Reloads an extension, useful for updating extensions without restarting the entire bot.
-* `u!system eval <command>`: Evaluates a Python command. **Only use if you know what you're doing!**
-* `u!system install <plugin>` Installs a plugin from a Git repository. A valid plugin.json file is required.
-* `u!system uninstall <plugin>`: Uninstalls a plugin.
-* `u!system upgrade [plugin] [args]`: Upgrades a plugin. If all arguments are left empty, it will upgrade Unifier.
-* `u!system shutdown`: Shuts the bot down.
-* `u!system reboot`: Reboots the bot.
+- `u!system reload <extension>`: Reloads an extension, useful for updating extensions without restarting the entire bot.
+- `u!system eval <command>`: Evaluates a Python command. **Only use if you know what you're doing\!**
+- `u!system install <plugin>` Installs a plugin from a Git repository. A valid plugin.json file is required.
+- `u!system uninstall <plugin>`: Uninstalls a plugin.
+- `u!system upgrade [plugin] [args]`: Upgrades a plugin. If all arguments are left empty, it will upgrade Unifier.
+- `u!system shutdown`: Shuts the bot down.
+- `u!system reboot`: Reboots the bot.
 
 ## Further setup
 
 ### Installing Revolt Support
 
 <Info>
-"Revolt Support" references the **Unifier Revolt Support extension**, not the Revolt support team.
+  "Revolt Support" references the **Unifier Revolt Support extension**, not the Revolt support team.
 </Info>
 
 First, you will need to create a Revolt bot, then add its token to the tokens list. To do this, shut down the bot (if it's already running), then run:
 
-* `sh run.sh --tokens` on Linux/macOS, or
-* `./run.bat --tokens` on Windows
+- `sh run.sh --tokens` on Linux/macOS, or
+- `./run.bat --tokens` on Windows
 
 to open the token manager. Enter your token encryption password, then type `add-token`, then add a token under the `TOKEN_REVOLT` key.
 
@@ -160,7 +158,7 @@ green@natsumi:~/unifier$
 You will also need to add user IDs of admins as `admin_ids`, as well as the user ID of the bot's owner. As Unifier's admins list allow both integers and strings, you can have both Discord and Revolt users under the same list. Your config.toml file should now look something like this:
 
 <Info>
-As Revolt uses alphanumeric IDs, rather than integers, you will need to save admin IDs as strings.
+  As Revolt uses alphanumeric IDs, rather than integers, you will need to save admin IDs as strings.
 </Info>
 
 ```toml config.toml
@@ -177,13 +175,13 @@ revolt = "01G9EDYVA9PRTPF129VCDS81TS"
 After starting the bot, you can run `u!system install https://github.com/UnifierHQ/unifier-revolt` to install Revolt Support.
 
 <Warning>
-Misconfiguration, such as a missing Revolt bot token, will result in the upgrade failing. This is caused by the System Manager being unable to start Revolt Support, and in most cases can be fixed by running `u!system load bridge_revolt`. If this does not help, run `u!system restart`.
+  Misconfiguration, such as a missing Revolt bot token, will result in the upgrade failing. This is caused by the System Manager being unable to start Revolt Support, and in most cases can be fixed by running `u!system load bridge_revolt`. If this does not help, run `u!system restart`.
 </Warning>
 
 If all goes well, Revolt Support will be running and your Revolt bot will be up and running. You can always stop Revolt Support by running `u!stop-revolt`.
 
 <Info>
-Alternatively, you can also run `u!system unload bridge_revolt` to stop Revolt Support.
+  Alternatively, you can also run `u!system unload bridge_revolt` to stop Revolt Support.
 </Info>
 
 If you wish to stop Revolt Support from loading on boot, please uninstall the Plugin. All dependencies and configuration files will be retained.
@@ -191,15 +189,15 @@ If you wish to stop Revolt Support from loading on boot, please uninstall the Pl
 ### Installing Guilded Support
 
 <Info>
-"Guilded Support" references the **Unifier Guilded Support extension**, not the Guilded support team.
+  "Guilded Support" references the **Unifier Guilded Support extension**, not the Guilded support team.
 </Info>
 
 As Guilded Support is programmed similarly to Revolt Support, the installation process is near identical.
 
 First, you will need to create a Guilded bot, then add its token to the tokens list. To do this, shut down the bot (if it's already running), then run:
 
-* `sh run.sh --tokens` on Linux/macOS, or
-* `./run.bat --tokens` on Windows
+- `sh run.sh --tokens` on Linux/macOS, or
+- `./run.bat --tokens` on Windows
 
 to open the token manager. Enter your token encryption password, then type `add-token`, then add a token under the `TOKEN_GUILDED` key.
 
@@ -215,7 +213,7 @@ green@natsumi:~/unifier$
 You will also need to add user IDs of admins as `admin_ids`, as well as the user ID of the bot's owner. As Unifier's admins list allow both integers and strings, you can have both Discord and Guilded users under the same list. Your config.toml file should now look something like this:
 
 <Info>
-As Guilded uses alphanumeric IDs, rather than integers, you will need to save admin IDs as strings.
+  As Guilded uses alphanumeric IDs, rather than integers, you will need to save admin IDs as strings.
 </Info>
 
 ```toml config.toml
@@ -233,13 +231,13 @@ guilded = "m7QDO1a4"
 After starting the bot, you can run `u!system install https://github.com/UnifierHQ/unifier-guilded` to install Guilded Support.
 
 <Warning>
-Misconfiguration, such as a missing Guilded bot token, will result in the upgrade failing. This is caused by the System Manager being unable to start Revolt Support, and in most cases can be fixed by running `u!system load bridge_guilded`. If this does not help, run `u!system restart`.
+  Misconfiguration, such as a missing Guilded bot token, will result in the upgrade failing. This is caused by the System Manager being unable to start Revolt Support, and in most cases can be fixed by running `u!system load bridge_guilded`. If this does not help, run `u!system restart`.
 </Warning>
 
 If all goes well, Guilded Support will be running and your Guilded bot will be up and running. You can always stop Guilded Support by running `u!stop-guilded`.
 
 <Info>
-Alternatively, you can also run `u!system unload bridge_guilded` to stop Guilded Support.
+  Alternatively, you can also run `u!system unload bridge_guilded` to stop Guilded Support.
 </Info>
 
 If you wish to stop Guilded Support from loading on boot, please uninstall the Plugin. All dependencies and configuration files will be retained.
@@ -254,21 +252,21 @@ To help keep your chat clean, Unifier lets you add moderators that can delete me
 
 ## Next steps
 
-Congratulations, your Unifier instance is ready to go! Follow the [Getting started for the official instance](../../setup/getting-started/) to connect your servers.
+Congratulations, your Unifier instance is ready to go\! Follow the [Getting started for the official instance](../../setup/getting-started/) to connect your servers.
 
 Here's some further guides you can follow to make the best out of Unifier:
 
-{% content-ref url="../../guides/bridge/moderation-tools.md" %}
-[moderation-tools.md](../../guides/bridge/moderation-tools.md)
-{% endcontent-ref %}
-
-{% content-ref url="../../guides/bridge/global-emojis.md" %}
-[global-emojis.md](../../guides/bridge/global-emojis.md)
-{% endcontent-ref %}
-
-{% content-ref url="../upgrading-unifier/" %}
-[upgrading-unifier](../upgrading-unifier/)
-{% endcontent-ref %}
+<CardGroup cols={2}>
+  <Card title="Moderation tools" icon="shield" href="../../guides/bridge/moderation-tools.md">
+    Unifier comes with various moderation tools (including automated ones) to help keep your communities safer when using the bridge.
+  </Card>
+  <Card title="Global Emojis" icon="face-laugh-beam" href="../../guides/bridge/global-emojis.md">
+    Global Emojis lets you use emojis from participating servers even on paywalled platforms.
+  </Card>
+  <Card title="Upgrading Unifier" icon="circle-arrow-up" href="../upgrading-unifier">
+    Learn how to upgrade your instance of Unifier with the built-in upgrade functionality.
+  </Card>
+</CardGroup>
 
 ## Troubleshooting
 
@@ -287,7 +285,7 @@ If the issue persists after installing Git, please restart Unifier. If the issue
 ### Winloop failed to build
 
 <Info>
-This is for Windows users only. Unifier will use uvloop on Linux and macOS hosts, which is a different library.
+  This is for Windows users only. Unifier will use uvloop on Linux and macOS hosts, which is a different library.
 </Info>
 
 If winloop fails to build for whatever reason, you should use the Stable installation. This won't limit any features, but it will probably be slower than Optimized and Balanced installations.
@@ -300,15 +298,15 @@ Also, consider using the Optimized installation. It includes a lot of extra libr
 
 ### Unifier is _still_ not reaching its advertised speeds
 
-Unifier's bridge speed will vary depending on various factors such as but not limited to your server specifications, server region, and Discord API performance. Most of the time, though, Unifier should be able to reach around 20-25MPS outside the US, and possibly 30+MPS within the US.
+Unifier's bridge speed will vary depending on various factors such as but not limited to your server specifications, server region, and Discord API performance. Most of the time, though, Unifier should be able to reach around 20-25MPS outside the US, and possibly 30\+MPS within the US.
 
 We were able to achieve **20MPS** consistently, peaking at 26MPS, with our main VPS that we use to host the official Unifier instance:
 
-* **Type**: VPS
-* **Provider**: Akamai Connected Cloud (formerly Linode)
-* **Location**: Frankfurt, Germany
-* **CPU**: Shared 2-core AMD EPYC 7713
-* **RAM**: 4 GB
-* **Network in/out**: 40 Gbps/4 Gbps
+- **Type**: VPS
+- **Provider**: Akamai Connected Cloud (formerly Linode)
+- **Location**: Frankfurt, Germany
+- **CPU**: Shared 2-core AMD EPYC 7713
+- **RAM**: 4 GB
+- **Network in/out**: 40 Gbps/4 Gbps
 
 We got these speeds in real-world conditions, so others should be able to too.

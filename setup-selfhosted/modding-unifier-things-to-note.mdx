@@ -1,22 +1,19 @@
 ---
-title: Modding Unifier: things to note
-description: Some AGPLv3 dos and don'ts, and info on support limitations
+title: "Modding Unifier: things to note"
 ---
 
-# Modding Unifier: things to note
-
 <Warning>
-**Disclaimer**: We are not lawyers, and we are only trying to show how users can make their Unifier instance AGPLv3 compliant. We recommend you consult a legal expert for more info.
+  **Disclaimer**: We are not lawyers, and we are only trying to show how users can make their Unifier instance AGPLv3 compliant. We recommend you consult a legal expert for more info.
 
-You can also view the [GPL FAQ](https://www.gnu.org/licenses/gpl-faq.en.html) to get a better understanding of the GPL licenses (including AGPLv3).
+  You can also view the [GPL FAQ](https://www.gnu.org/licenses/gpl-faq.en.html) to get a better understanding of the GPL licenses (including AGPLv3).
 </Warning>
 
 Unifier is open source and licensed under the AGPLv3 license, which means you can modify Unifier to your liking as long as you:
 
-* Open-source your modified version,
-* License your modified version **under the same license**,
-* Make your source code available to your users, and
-* State where you got the original version from (i.e. Unifier/Unifier Micro repo by UnifierHQ)
+- Open-source your modified version,
+- License your modified version **under the same license**,
+- Make your source code available to your users, and
+- State where you got the original version from (i.e. Unifier/Unifier Micro repo by UnifierHQ)
 
 ## The UnifierHQ team asked me to modify Unifier due to an issue. Do I need to make the modified version public?
 
@@ -38,11 +35,11 @@ However, if you wish to modify Unifier in whatever way, **you must accept the AG
 
 Certain files shouldn't be open sourced, as they should remain limited to your Unifier/Unifier Micro instance. These files include:
 
-* data.json (contains user and server data)
-* config.json (contains instance configuration)
-* bridge.json (contains message cache)
-* bridge.json.lzma (contains message cache in a compressed format)
-* .env (contains tokens and other secrets - **DO NOT SHARE THIS FILE TO ANYONE UNDER ANY CIRCUMSTANCES.**)
+- data.json (contains user and server data)
+- config.json (contains instance configuration)
+- bridge.json (contains message cache)
+- bridge.json.lzma (contains message cache in a compressed format)
+- .env (contains tokens and other secrets - **DO NOT SHARE THIS FILE TO ANYONE UNDER ANY CIRCUMSTANCES.**)
 
 So if the only files you've modified are these, there's no need to show what you've changed. We consider this as using vanilla Unifier, and it's only when you change the actual **Python (.py) files** that you should upload them. But once again, even if you upload your version, don't upload the files in the aforementioned list.
 

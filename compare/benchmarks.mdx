@@ -28,13 +28,13 @@ For this experiment, we sent a single dot (".") in connected channels to see how
 
 The data below is the average time taken to bridge a message to one server (Single) and three servers (Multi) over three trials, measured in milliseconds (0.001 seconds). **Lower is better.**
 
-<table data-full-width="false"><thead><tr><th>Category</th><th>Unifier</th><th width="127">Tunnels.gg</th><th>ComBot</th><th>Silly Chat</th><th>Bolt</th><th>InterChat</th></tr></thead><tbody><tr><td>Single</td><td><p><a data-footnote-ref href="#user-content-fn-1"><strong>1</strong></a><a data-footnote-ref href="#user-content-fn-2"><strong>73.67</strong></a> </p><p><a data-footnote-ref href="#user-content-fn-3">±21</a></p><p></p><p>B: <a data-footnote-ref href="#user-content-fn-4"><strong>157</strong></a><br>W: <a data-footnote-ref href="#user-content-fn-5"><strong>199</strong></a></p></td><td><strong>310.67</strong><br>±11<br><br>B: <strong>302</strong><br>W: <strong>324</strong></td><td><strong>158.33</strong> 👑<br>±10<br><br>B: <strong>149</strong><br>W: <strong>169</strong></td><td><strong>369.00</strong><br>±10.5<br><br>B: <strong>356</strong><br>W: <strong>377</strong></td><td><strong>339.00</strong><br>±23.5<br><br>B: <strong>322</strong><br>W: <strong>369</strong></td><td><strong>565.33</strong><br>±26<br><br>B: <strong>537</strong><br>W: <strong>589</strong></td></tr><tr><td>Multi (3 servers)</td><td><p><strong>212.00</strong> 👑</p><p>±75<br><br>B: <strong>140</strong><br>W: <a data-footnote-ref href="#user-content-fn-6"><strong>290</strong></a></p></td><td><strong>462.67</strong><br>±180<br><br>B: <strong>312</strong><br>W: <strong>672</strong></td><td><p><strong>235.22</strong></p><p>±131.5<br><br>B: <strong>141</strong><br>W: <strong>404</strong></p></td><td><strong>653.67</strong><br>±266<br><br>B: <strong>396</strong><br>W: <strong>928</strong></td><td><strong>530.22</strong><br>±230.5<br><br>B: <strong>320</strong><br>W: <strong>781</strong></td><td><strong>570.78</strong><br>±75.5<br><br>B: <strong>486</strong><br>W: <strong>637</strong></td></tr></tbody></table>
+
 
 (Note: you may need to scroll to see all entries.)
 
 ### Graphs
 
-<Frame caption="A column graph showing the performance of the 6 bots compared. Lower is better."><img src="../assets/images/Screenshot 2024-11-27 at 13.28.10.png" alt="" /></FrameCentered>
+<Frame caption="A column graph showing the performance of the 6 bots compared. Lower is better."><img src="../assets/images/Screenshot 2024-11-27 at 13.28.10.png" alt="" /></Frame>
 
 <Frame caption="A column graph showing the performance of the top 2 bots. Lower is better."><img src="../assets/images/Screenshot 2024-11-27 at 13.28.18.png" alt="" /></Frame>
 
@@ -74,17 +74,3 @@ Whichever bot you may end up using, we hope you enjoy your cross-server or cross
 ## Acknowledgements
 
 Thank you to MrTomato (developer of Connections Bot) for giving us feedback on BridgeMark to help make our benchmarks more accurate!
-
-[^1]: Average time taken to bridge messages.
-
-[^2]: Average time taken to bridge messages.
-
-[^3]: Uncertainty (calculated using (max-min)/2). Lower uncertainties suggest better consistency across servers.
-
-[^4]: Shortest time taken to bridge one message to a connected channel, **not** shortest average time taken for each trial.
-
-[^5]: Longest time taken to bridge one message to a connected channel, **not** longest average time taken for each trial.
-
-[^6]: For some bots, the worst multi-bridge performance may be significantly higher than the best performance and average performance, as they bridge to servers sequentially rather than concurrently.
-
-[^7]: These are the specifications of the host we used to run our private instances.
