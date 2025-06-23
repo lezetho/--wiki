@@ -1,6 +1,6 @@
 ---
-title: Benchmarks
-description: Comparing Unifier's speed with that of other similar bots.
+title: "Benchmarks"
+description: "Comparing Unifier's speed with that of other similar bots."
 ---
 
 The tool is [open-source](https://github.com/greeeen-dev/bridgemark/), so you can conduct your own testing if you're skeptical about our results (and correct us if we made a mistake somewhere) and verify that we haven't added any biases whatsoever.
@@ -9,12 +9,12 @@ The tool is [open-source](https://github.com/greeeen-dev/bridgemark/), so you ca
 
 We'll be comparing 6 bots for this comparison:
 
-* Unifier (v3.7.1 unmodified, open source, self hosted)
-* Tunnels.gg (unmodified, closed source, public instance)
-* Connections Bot/ComBot (unmodified, closed source, public instance)
-* Bolt (v0.7.4 patched, open source, self hosted)
-* Silly Chat (v2.2.6 patched, open source, self hosted)
-* InterChat (v4.1.0 unmodified, open source, public instance)
+- Unifier (v3.7.1 unmodified, open source, self hosted)
+- Tunnels.gg (unmodified, closed source, public instance)
+- Connections Bot/ComBot (unmodified, closed source, public instance)
+- Bolt (v0.7.4 patched, open source, self hosted)
+- Silly Chat (v2.2.6 patched, open source, self hosted)
+- InterChat (v4.1.0 unmodified, open source, public instance)
 
 If a bot was patched by us, we've described our changes in [Things to note](benchmarks.mdx#things-to-note).
 
@@ -25,6 +25,11 @@ For this experiment, we sent a single dot (".") in connected channels to see how
 ### Results table
 
 The data below is the average time taken to bridge a message to one server (Single) and three servers (Multi) over three trials, measured in milliseconds (0.001 seconds). **Lower is better.**
+
+| Category          | Unifier                                                   | Tunnels.gg                                                 | ComBot                                                       | Silly Chat                                                  | Bolt                                                         | InterChat                                                   |
+| ----------------- | --------------------------------------------------------- | ---------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- | ------------------------------------------------------------ | ----------------------------------------------------------- |
+| Single            | **173.67**<br />±21<br /><br />B: **157**<br />W: **199** | **310.67**<br />±11<br /><br />B: **302**<br />W: **324**  | **158.33 **👑<br />±10<br /><br />B: **149**<br />W: **169** | **369.00**<br />±10.5<br /><br />B: **356**<br />W: **369** | **339.00**<br />±23.5<br /><br />B: **322**<br />W: **369**  | **565.33**<br />±26<br /><br />B: **537**<br />W: **589**   |
+| Multi (3 servers) | **212.00**<br />±75<br /><br />B: **140**<br />W: **290** | **462.67**<br />±180<br /><br />B: **312**<br />W: **672** | **235.22**<br />±131.5<br /><br />B: **141**<br />W: **404** | **653.67**<br />±266<br /><br />B: **396**<br />W: **928**  | **530.22**<br />±230.5<br /><br />B: **320**<br />W: **781** | **570.78**<br />±75.5<br /><br />B: **486**<br />W: **637** |
 
 (Note: you may need to scroll to see all entries.)
 
@@ -42,14 +47,14 @@ The averages were derived from the mean average of the three trials for each cat
 
 We try to keep our data as consistent, accurate, and bias-free as possible, but there's still some things you probably want to know about this experiment.
 
-* Unifier instance used for testing was hosted in **Canada**, while Bolt and Silly Chat instances used for testing were hosted in **Germany** due to compatibility issues with the former host. We do not know where the Tunnels.gg and Connections Bot instances were hosted in.
-* As Tunnels.gg and Connections Bot are closed source, **we could not get access to private instances for testing**, so we had to use public instances.
-  * This means that our private instances were connected to much less servers than Tunnels.gg's and Connections Bot's public instances, which were each connected to thousands. However, both Tunnels.gg and Connections Bot were most likely running on hosts with much more resources than the host we used, since more resources would be required to keep up with a larger server count than just a dual-core 4GB RAM host. Therefore, we decided to not take the server count difference into account, as the resources difference would balance it out.
-* Although InterChat is open source, we could not self-host it due to lack of proper documentation for self hosting. Therefore, we decided to use the public instance instead.
-* For some bots, we actually did more than three trials until we could get three trials that gave consistent data. This so we can measure what the bots are able to achieve on a consistent basis without giving any of them unfair bonuses or penalties for inconsistent performance.
-* We wanted to test the bridging performance of files, but we decided to not do this as a fair testing environment was impossible. While Unifier relays replicas of files to servers, other bots we compared sent the attachment link instead. Testing the file bridging speed for bots that send attachment links would be the same as testing the text bridging performance again.
-* Our version of Bolt was modified, as the original version would not run on our system. We added very minor changes, though, as we only had to add the `jbr:` prefix at the front of many import statements to get the bot to load the necessary libraries.
-* Our version of Silly Chat was modified, as the original version would refuse to run on our system. For example, we've changed the Discord wrapper from discord.py to Nextcord due to the bot hanging on boot and removed AI commands so we don't have to configure AI API endpoints and keys.
+- Unifier instance used for testing was hosted in **Canada**, while Bolt and Silly Chat instances used for testing were hosted in **Germany** due to compatibility issues with the former host. We do not know where the Tunnels.gg and Connections Bot instances were hosted in.
+- As Tunnels.gg and Connections Bot are closed source, **we could not get access to private instances for testing**, so we had to use public instances.
+  - This means that our private instances were connected to much less servers than Tunnels.gg's and Connections Bot's public instances, which were each connected to thousands. However, both Tunnels.gg and Connections Bot were most likely running on hosts with much more resources than the host we used, since more resources would be required to keep up with a larger server count than just a dual-core 4GB RAM host. Therefore, we decided to not take the server count difference into account, as the resources difference would balance it out.
+- Although InterChat is open source, we could not self-host it due to lack of proper documentation for self hosting. Therefore, we decided to use the public instance instead.
+- For some bots, we actually did more than three trials until we could get three trials that gave consistent data. This so we can measure what the bots are able to achieve on a consistent basis without giving any of them unfair bonuses or penalties for inconsistent performance.
+- We wanted to test the bridging performance of files, but we decided to not do this as a fair testing environment was impossible. While Unifier relays replicas of files to servers, other bots we compared sent the attachment link instead. Testing the file bridging speed for bots that send attachment links would be the same as testing the text bridging performance again.
+- Our version of Bolt was modified, as the original version would not run on our system. We added very minor changes, though, as we only had to add the `jbr:` prefix at the front of many import statements to get the bot to load the necessary libraries.
+- Our version of Silly Chat was modified, as the original version would refuse to run on our system. For example, we've changed the Discord wrapper from discord.py to Nextcord due to the bot hanging on boot and removed AI commands so we don't have to configure AI API endpoints and keys.
 
 ## So...what's the conclusion?
 
@@ -65,8 +70,8 @@ What is even more concerning for Silly Chat is that the test was conducted in a 
 
 If you're looking for a bridge bot for your community, we'd (obviously) recommend **Unifier** for its record-holding bridging speeds and excellent versatility. However, we would also certainly recommend **Connections Bot (ComBot)** and **Tunnels.gg** as **very solid alternatives**, as they're also plenty fast and feature-packed (although they lack cross platform bridging) that they also fit well for communities of any size.
 
-Whichever bot you may end up using, we hope you enjoy your cross-server or cross-platform chatting experience!
+Whichever bot you may end up using, we hope you enjoy your cross-server or cross-platform chatting experience\!
 
 ## Acknowledgements
 
-Thank you to MrTomato (developer of Connections Bot) for giving us feedback on BridgeMark to help make our benchmarks more accurate!
+Thank you to MrTomato (developer of Connections Bot) for giving us feedback on BridgeMark to help make our benchmarks more accurate\!
