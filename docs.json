@@ -11,30 +11,23 @@
   "navigation": {
     "groups": [
       {
-        "group": "Get Started",
+        "group": "Setup (existing instance)",
         "pages": [
-          "index",
-          "quickstart",
-          "development"
+          "setup/getting-started"
         ]
       }
     ],
     "global": {
       "anchors": [
         {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
+          "anchor": "GitHub",
+          "href": "https://github.com/UnifierHQ",
+          "icon": "github"
         },
         {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
+          "anchor": "Discord",
+          "href": "https://discord.unifierhq.org",
+          "icon": "discord"
         }
       ]
     }
