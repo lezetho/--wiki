@@ -1,0 +1,122 @@
+---
+title: Discord
+---
+
+# Discord
+
+<Info>
+As Discord has its own slash commands interface, we will be using that for this guide.
+
+If you cannot use slash commands for whatever reason, you may use the text interface on Universal commands by replacing the `/` with the instance's prefix (for Unifier public instance, it's `u!`).
+
+If you are unsure if a command is universal, run `/help` or `u!help`, search for the command you're trying to run, and check if it has the :sparkles: emoji next to it.
+</Info>
+
+## Server permissions
+
+First, ensure that your Unifier instance has all the necessary permissions. For it to properly function, it should have:
+
+* **Read messages**\
+  Required for detecting messages sent in chat.
+* **Read message history**\
+  Required for replying to work.
+* **Send messages**\
+  Required for Unifier to send responses to commands.
+* **Embed links**\
+  Required for embeds, as well as for displaying embeds from bridged messages.
+* **Attach files**\
+  Required for displaying attachments from bridged messages.
+* **Manage webhooks**\
+  Required for receiving bridged messages.
+* _**(Optional) Use external emojis**_\
+  Required for displaying user emojis, but not required for bot to function.
+* _**(Optional) Manage messages**_\
+  Required for Global Emojis, but not required for basic bridging functionality.
+
+If any of these permissions are missing, **the bot may NOT work in your server**.
+
+<Danger>
+Under any circumstances, **do NOT grant Unifier the Administrator permission**. This permission is **EXTREMELY DANGEROUS**, and it should **NOT** be granted to any bot, not even Unifier.
+
+As described in the [AGPLv3 license](https://github.com/UnifierHQ/unifier/blob/main/LICENSE.txt#L587), UnifierHQ does not provide any form of warranty, nor does it claim any sort of liability for damages. Although we may release patches and publish a security advisory if the damages were caused by a security vulnerability, you may not hold UnifierHQ members responsible for any form of damage.
+
+For safety reasons, **Unifier will refuse to work if it has been granted Administrator permissions**. Self-hosters can disable this check, but **it is not recommended**.
+</Danger>
+
+## Creating a Private Room
+
+<Info>
+If you've already created a Private Room (regardless of the platform you've used), skip to [Connecting to Rooms](discord.md#connecting-to-rooms).
+</Info>
+
+Unifier lets you create Private Rooms for you and your friends and communities to chat together without having to worry about unwanted servers joining in.
+
+To create a Private Room, simply run `/bridge create-room` to create a room. Your Room will be given a random name, which Unifier will send through the command response. **This is your Room name, which you can use to manage your Room settings.**
+
+<img src="../../assets/images/image (21).png" alt="" />
+
+If you want, you can always set a display name for this Room using `/config display-name`.
+
+If Private Rooms aren't enabled on your instance, please contact your instance operators for assistance.
+
+### Creating Private Room invites
+
+<Info>
+If you're trying to bind the server you created your Private Room in to your Private Room, you don't need a Room invite for this. You will only need it for other servers.
+
+If you're trying to bind to a Public Room, you don't need an invite regardless of the server (hence the "Public").
+</Info>
+
+For servers to join your Private Room, you will need to create an invite. You can create an invite by running `/config create-invite`. You will need to provide the Room name when running the command.
+
+Every invite, by default, is valid for 7 days and has unlimited uses. You can customize these if you wish.
+
+<Warning>
+Although permanent invites (i.e. invites that don't expire) are available, they are not enabled by default. If you need this, please ask your instance's owners for assistance.
+</Warning>
+
+<img src="../../assets/images/image (24).png" alt="" />
+
+Once you run the command, Unifier will create an invite and send it to you through DMs. **This is your invite code.**
+
+<img src="../../assets/images/image (25).png" alt="" />
+
+If you forget your invites, you can always run `/config invites <room>` to view your Room's invites. Unifier will DM the Room's invites to you.
+
+<img src="../../assets/images/image (26).png" alt="" />
+
+## Connecting to Rooms
+
+<Info>
+To bind to and unbind from rooms, you need **Manage Channels** permission.
+</Info>
+
+<Warning>
+To connect to a room, you will need a channel for the room. We recommend you create a dedicated channel for the rooms rather than using existing ones.
+
+After creating the channel, please make sure there are no channel permission overrides that **limit** Unifier's permissions (you do not need to check for overrides that **grant** additional permissions to Unifier).
+</Warning>
+
+Connecting to a Unifier room is simple and straightforward. You can see what rooms are available to you by running `/bridge rooms`. If there are no rooms available, contact your instance admins for help.
+
+In the channel you want to bind the Room to, run `/bridge bind room:<room>`, where `<room>` is the name of the room you want to connect to, or if the room is a Private Room, an invite code to the Private Room.
+
+<Frame caption="For Public Rooms, type in the Room name."><img src="../../assets/images/image (28).png" alt="" /></Frame>
+
+<Frame caption="For Private Rooms, type in the Room invite. You can use the Room name if you're running the command in the same server you created the Room in."><img src="../../assets/images/image (27).png" alt="" /></Frame>
+
+Before you bind the channel to the room, you'll need to accept the rules of the room. On Discord, you will need to press "Agree & Bind" to connect to the room.
+
+Once you have completed your steps, your channel should be connected!
+
+<Warning>
+If you're done using an invite, **we strongly recommend you revoke it**. An invite will let any server join your Private Room.
+
+To revoke an invite, run `/config delete-invite <invite>` where `<invite>` is the invite code.
+</Warning>
+
+## Troubleshooting
+
+### I can't ping anyone over the Bridge!
+
+This is **intentional behavior** to prevent duplicate pinging and cross-server raids. All messages sent through the bridge cannot ping anyone in any server, even if the correct mention is in the message.

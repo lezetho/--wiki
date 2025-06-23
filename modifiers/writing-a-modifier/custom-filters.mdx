@@ -1,0 +1,73 @@
+---
+title: Custom Filters
+---
+
+# Custom Filters
+
+<Info>
+Filters replaces the Content Protection service that was deprecated in Unifier 3.8.0 (release 139).
+</Info>
+
+The Filters service allows your Modifier to install Filters to a Unifier instance.
+
+## Base Filter code
+
+All Filters must have this base code:
+
+```python filter.py
+from utils.base_filter import FilterResult, BaseFilter
+
+class Filter(BaseFilter):
+    def __init__(self):
+        super().__init__(
+            'custom_filter',
+            'Custom Filter',
+            'A custom filter.'
+        )
+
+    def check(self, message, data) -> FilterResult:
+        can_send = True
+        return FilterResult(can_send)
+```
+
+## Adding Filters to your Modifier
+
+Under the `filters` key in plugin.json, add the filename/filepath of your Filter's code to the array.
+
+## The message data dictionary (message)
+
+For each message being scanned by Filters, Unifier will provide the following data under the messages argument when it calls the check function:
+
+* `author` (string): The message author's user ID
+* `bot` (boolean): Whether the message author is a bot or not
+* `webhook_id` (string): The webhook ID of the message, if applicable
+* `content` (string): The message content
+* `files` (integer): The number of files in the message
+* `suspected_spammer` (boolean): Whether Discord has flagged the user's account or not (**New in 3.9.4/rel148**)
+
+## The Filter data dictionary (data)
+
+For each Filter, Unifier stores some data such as data stored by the Filter and configuration values. Unifier will provide the following data under the data argument:
+
+* `config` (dictionary): The configuration values of the Filter
+* `data` (dictionary): Temporary data stored by the Filter
+* `global` (boolean): Whether the Filter is called because it was globally enabled (if this is false, it means it was called because it is enabled by the Room)
+
+## Responding to Filter calls
+
+For every Filter call, Unifier will expect the Filter to return a `FilterResult` object. This is available under `utils.base_filter`.
+
+The object's constructor requires the following positional arguments:
+
+* `allowed` (boolean): Whether the message should be allowed or not
+
+You may also provide the following optional keyword arguments:
+
+* `data` (dictionary): Temporary Filter data to store to Unifier (there is no fixed format for this)
+* `message` (string): The message that should be shown to the user if `allowed` is False and `should_log` is True
+* `should_log` (boolean): Whether the Filter trigger (i.e. `allowed` is False) should be logged or not
+* `should_contribute` (boolean): Whether the Filter trigger should contribute to the [Automatic UAM](../../guides/bridge/under-attack-mode.md#automatic-uam) threshold
+
+## Compatibility
+
+Modifiers offering Emojis service should have a minimum Unifier release requirement of **144** or above.

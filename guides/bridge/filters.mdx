@@ -1,0 +1,43 @@
+---
+title: Filters
+---
+
+# Filters
+
+Filters are an intuitive and customizable way to keep your Rooms clean and safe for everyone. It's kind of like Discord's AutoMod, but for Unifier.
+
+## Viewing available Filters
+
+The list of Filters for each Unifier instance can be different. For UnifierHQ's official instances, we usually use the base Filters set that comes packaged with Unifier. To view a list of available features, run `/config filters`. This will summon the Filters management panel for your Unifier Room.
+
+<Info>
+If you aren't running the command in a channel connected to a Unifier Room, you must provide it under the `room` parameter.
+</Info>
+
+<img src="../../assets/images/image (17).png" alt="" />
+
+Filters that are enabled are highlighted with a :white\_check\_mark: checkmark.
+
+## Toggling Filters
+
+To toggle a Filter, select the "Filter..." dropdown, then select the Filter you want to toggle. If the Filter is disabled, you will see a button that says "Enable filter", which you can click on to enable that Filter.
+
+<img src="../../assets/images/image (18).png" alt="" />
+
+Or, if the Filter is already enabled, you will see a "Disable filter' button that does the opposite. Disabling a Filter won't reset its configuration values.
+
+<img src="../../assets/images/image (19).png" alt="" />
+
+Once the filter is toggled, your changes will apply immediately.
+
+## Configuring Filters
+
+Some Filters have customization options which you can modify. To do this, click on the "Configuration..." dropdown, then select on the configuration you want to edit. Then, you can click on the "Change value" button to set the value of that configuration.
+
+<img src="../../assets/images/image (20).png" alt="" />
+
+## What happens when a Filter is triggered?
+
+If a Filter catches something, it will block the message from being bridged, and depending on the Filter (for example, the Bots and Webhooks Filters won't alert the sender for obvious reasons), it will alert the sender of that message. If the message was sent in a Public Room (if your server admin created your Unifier Room, it's likely a Private Room), we will be notified of it, too.
+
+If a Filter is triggered too many times in the same Room, Unifier may enable [Under Attack Mode](under-attack-mode.md) for your server, if [Automatic UAM](under-attack-mode.md#automatic-uam) is enabled.

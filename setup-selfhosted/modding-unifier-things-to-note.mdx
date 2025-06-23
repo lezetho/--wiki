@@ -1,0 +1,75 @@
+---
+title: Modding Unifier: things to note
+description: Some AGPLv3 dos and don'ts, and info on support limitations
+---
+
+# Modding Unifier: things to note
+
+<Warning>
+**Disclaimer**: We are not lawyers, and we are only trying to show how users can make their Unifier instance AGPLv3 compliant. We recommend you consult a legal expert for more info.
+
+You can also view the [GPL FAQ](https://www.gnu.org/licenses/gpl-faq.en.html) to get a better understanding of the GPL licenses (including AGPLv3).
+</Warning>
+
+Unifier is open source and licensed under the AGPLv3 license, which means you can modify Unifier to your liking as long as you:
+
+* Open-source your modified version,
+* License your modified version **under the same license**,
+* Make your source code available to your users, and
+* State where you got the original version from (i.e. Unifier/Unifier Micro repo by UnifierHQ)
+
+## The UnifierHQ team asked me to modify Unifier due to an issue. Do I need to make the modified version public?
+
+In these cases, we do not require you open source the modified version of Unifier.
+
+When we ask you to modify Unifier, we will ask you to modify only small bits of code that will help us identify or resolve the issue. We don't ask you to add whole blocks of code that fundamentally change Unifier's behavior from the inside out, or add new things we still have yet to release.
+
+For any other changes that **UnifierHQ did not ask you to make**, these should follow license conditions, regardless of how much they change the program.
+
+## I haven't modified Unifier at all, does AGPLv3 still apply?
+
+If you're using the vanilla version of Unifier, **the AGPLv3 does not apply**. This is in section 9 of the AGPLv3 license text.
+
+However, if you wish to modify Unifier in whatever way, **you must accept the AGPLv3 license**. Otherwise, you don't need to care much about it, and you can ignore this page until you want to add your own twist to the program.
+
+> **You are not required to accept this License in order to receive or run a copy of the Program**. Ancillary propagation of a covered work occurring solely as a consequence of using peer-to-peer transmission to receive a copy likewise does not require acceptance. **However, nothing other than this License grants you permission to propagate or modify any covered work.** These actions infringe copyright if you do not accept this License. Therefore, by modifying or propagating a covered work, you indicate your acceptance of this License to do so.
+
+## What you _shouldn't_ open source
+
+Certain files shouldn't be open sourced, as they should remain limited to your Unifier/Unifier Micro instance. These files include:
+
+* data.json (contains user and server data)
+* config.json (contains instance configuration)
+* bridge.json (contains message cache)
+* bridge.json.lzma (contains message cache in a compressed format)
+* .env (contains tokens and other secrets - **DO NOT SHARE THIS FILE TO ANYONE UNDER ANY CIRCUMSTANCES.**)
+
+So if the only files you've modified are these, there's no need to show what you've changed. We consider this as using vanilla Unifier, and it's only when you change the actual **Python (.py) files** that you should upload them. But once again, even if you upload your version, don't upload the files in the aforementioned list.
+
+## How do I make my source code "available"?
+
+If you're just using vanilla Unifier, it is already AGPLv3 compliant, so you do not need to do anything.
+
+If you've modded Unifier, then you will need to show your users where they can find your changes. You can do this by changing the `repo` key in your `config.json` file to your repository where your modifications are available.
+
+To encourage license compliance, we prevent the bot from booting if a valid repository is not given. You are free to bypass this (it's free as in freedom anyway), **but please keep it so you can stay AGPLv3 compliant when running the bot**.
+
+## Do plugins/add-ons apply?
+
+Yes, plugins apply too. The [GPL FAQ](https://www.gnu.org/licenses/gpl-faq.en.html#GPLStaticVsDynamic) states that they are also subject to GPL conditions:
+
+> Linking a GPL covered work statically or dynamically with other modules is making a combined work based on the GPL covered work. Thus, the terms and conditions of the GNU General Public License cover the whole combination.
+
+### If I use a plugin with a non-modified version, do I have to show changes?
+
+No, as we do not consider plugins as modifying Unifier core and system extensions (the cogs that were preinstalled), unless the plugins are explicitly meant to modify them in whatever way.
+
+## How to show changes
+
+You can create a fork of the upstream Unifier repository by pressing the fork button. This way, you'll be able to easily update your fork of Unifier to the latest version while keeping your changes. Do note that if we modified some lines of code you modified yourself, this may result in merge conflicts, which you will need to resolve.
+
+## Modding and support coverage
+
+Unifier developers will be able to assist you with problems you may be having with Unifier. However, if you use a modded version of the bot, the support we can offer may be limited, depending on what you modified and how much you've modified it. If you've used plugins with your Unifier instance, we can only provide support if the base files weren't modified.
+
+We recommend you run the vanilla version you can find our GitHub repositories with the same configuration and data first, so you can check if the problem is coming from your modifications or an actual bug we will need to patch. You can also run Unifier in safe mode by using `python3 unifier.py safemode`, which will disable all plugins but system ones.

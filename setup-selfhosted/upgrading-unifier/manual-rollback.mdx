@@ -1,0 +1,27 @@
+---
+title: Manual rollback
+---
+
+# Manual rollback
+
+Unifier has an automatic rollback system to let the bot continue operating normally even after upgrade failures. However, this system isn't perfect - there may be cases where the rollback fails, and you will need to perform a manual rollback to repair the bot.
+
+Fortunately, the past version of the bot will be stored in the `old` directory inside your Unifier root directory. Here, you will be able to find configuration, data, and Unifier code files that were being used pre-upgrade. You will need to copy these files into their respective folders, so if `bridge.py` is in `old/cogs`, you will need to copy it into the `cogs` folder.
+
+<Warning>
+To prevent data loss, do not copy the old `data.json` file unless it is absolutely necessary to restore functionality.
+</Warning>
+
+## Troubleshooting
+
+### The bot still won't boot
+
+Check the console logs. If there's something about `system.json` not being found, this means that System Manager could not find the system plugins entry in the `plugins` folder. To fix this, you can download the `system.json` file in the `plugins` folder in the Unifier GitHub repository, then copy it to the instance's `plugins` folder.
+
+If this doesn't help or apply to you, there is nothing we can do to help at this point. We highly recommend you install a fresh copy at this stage.
+
+Before reinstalling Unifier, make sure you backup `data.json` and `config.toml` (or `config.json` for v2 and older) so you can use them later once the bot has been reinstalled. Additionally, make sure you're not getting an invalid token error.
+
+To reinstall Unifier, you can download a fresh copy off of our GitHub repositories. Once you have downloaded it, you can copy your values over from the old config file to the new one, as well as copy your data file over.
+
+If it still does not boot, try booting the bot without a data file. If it still does not boot even with fresh data, try reconfiguring the bot from scratch.

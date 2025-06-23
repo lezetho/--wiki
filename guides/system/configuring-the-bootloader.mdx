@@ -1,0 +1,60 @@
+---
+title: Configuring the bootloader
+---
+
+# Configuring the bootloader
+
+<Info>
+This guide is only for **Unifier v3.0.0 and newer**.
+</Info>
+
+Unifier comes with a customizable bootloader that lets you change how Unifier starts and runs. You can configure the options by editing boot\_config.json.
+
+All values must be added in the corresponding JSON object in JSON format. So for example, to set the binary for the bootloader, your boot\_config.json file should look like this:
+
+```json boot_config.json
+{
+  "bootloader": {
+    "binary": "/usr/bin/python3.12"
+  }
+}
+```
+
+## Bootloader (`bootloader`)
+
+The bootloader scans for an existing Unifier installation, then starts Unifier if it is found. If an installation cannot be found, it will run the installer.
+
+### Python binary (`binary`)
+
+Sets the Python binary to use to run Installer and Unifier. Installer will install Python dependencies here. Virtual environments can be used by setting the binary path to the virtual environment's Python binary location (e.g. `./.venv/bin/python`).
+
+* Type: String
+* Default: `python3` on Linux/macOS, `py -3` on Windows
+
+### Startup arguments (`options`)
+
+Arguments passed to Unifier core on startup, such as `safemode` for safemode or `core` for coreboot.
+
+* Type: Array\[String]
+* Default: `[]`
+
+### Boot file (`boot_file`)
+
+Python file the bootloader will run to start Unifier up.
+
+* Type: String
+* Default: value of `base_bootfile` in boot/internal.json
+
+### Reboot on crash (`autoreboot`)
+
+Whether the bootloader should reboot Unifier when it crashes (exits with an exit code other than 0).
+
+* Type: Boolean
+* Default: false
+
+### Reboot on crash threshold (`autoreboot_threshold`)
+
+How long Unifier has to stay up for in seconds in order for it to automatically reboot on crash. If Unifier stays online for a shorter time than this threshold, bootloader will exit.
+
+* Type: Integer
+* Default: 60

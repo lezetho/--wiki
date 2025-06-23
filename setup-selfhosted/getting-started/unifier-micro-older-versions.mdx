@@ -1,0 +1,143 @@
+---
+title: Unifier Micro (older versions)
+---
+
+# Unifier Micro (older versions)
+
+<Info>
+This guide is for **Unifier Micro v2 and older**. If you're installing a newer version of Unifier Micro, consult the [modern guide](unifier-micro.md) instead.
+</Info>
+
+## Requirements
+
+### Minimum system requirements
+
+<Warning>
+Memory requirements will depend on many factors such as but not limited to cached messages and number of servers the bot is in.
+</Warning>
+
+<Info>
+Unifier Micro can be installed on Python 3.13.0rc2 and newer but has the following caveat:
+
+* Nextcord in some cases cannot be installed using user installation. In this case, it must either be installed on a virtualenv or globally.
+
+Please note that this is for advisory purposes only and we will remove this note as soon as we learn the above issues have been patched.
+</Info>
+
+Unifier Micro requires the following:
+
+* 64-bit CPU that can run Python 3.8 or newer
+* At least 50MB of available RAM, meaning excluding RAM already being used by the system and other apps
+* An internet connection
+* Python 3.8 or newer
+
+### Recommended system requirements
+
+We recommend the following for Unifier:
+
+* 64-bit CPU based on x86\_64 or ARM64 that can run Python 3.11 or newer
+* 15 Mbps or faster internet connection
+* Python 3.11 or newer
+
+### Dependencies
+
+Unifier Micro requires the following modules to run:
+
+* `novus` 0.2.4 or newer (discord.py and other versions may run with modifications)
+* `python-dotenv`
+
+## Installation
+
+Other than dependencies, Unifier Micro requires no installation process, just like it's full-scale version. It is ready to be run out-of-the-box, with no compilation needed.
+
+<Info>
+We do not provide Docker containers or anything similar. By "out-of-the-box", we mean that its source code can be ran in whatever system with very little to no extra steps.
+</Info>
+
+## Configuration
+
+A base `config.json` file should have been provided to you. This configuration is near identical to our `config.json` file on the official instance, so it can serve as a good template.
+
+Unifier Micro has a much simplified configuration process, so you only need to set up the owner ID, admin IDs, prefix, and bot token.
+
+### Set bot token
+
+To log in to Discord, Unifier needs to connect to a bot account. By giving it a token, it gives Unifier a "password" to log in to that account.
+
+<Danger>
+**WARNING:** Do **NOT** share this token to anyone you don't trust, not even us!
+</Danger>
+
+<Info>
+As of Unifier and Unifier Micro v1.1.8, tokens in config files are **no longer supported**. You will have to use .env files.
+</Info>
+
+Create a `.env` (dotenv) file, then add your token as the value for the `TOKEN` key. Your .env file should look like this:
+
+```text .env
+TOKEN=TH0U5H411N0TP455
+```
+
+This file should be EXACTLY named `.env`, not `.env.txt`, `.env.json`, just `.env`, nothing more.
+
+### Assigning Unifier Micro admins
+
+You can assign admins by adding their user IDs in the `admin_ids` list in `config.json`. By assigning admins, you grant them the ability to manage rooms and moderators.
+
+As Unifier Micro does not have Revolt or Guilded support capabilities, only integers should be used as IDs.
+
+<Info>
+Admins **do not** have access to admin.py commands, only certain config.py commands.
+</Info>
+
+## Running Unifier Micro
+
+You can run Unifier Micro on whatever system that supports Python 3.8 or newer and Unifier Micro's dependencies. If you're self-hosting and running Unifier Micro through the shell (bash, zsh, etc), we recommend you use the `screen` package (this is NOT a Python library) so you can keep it running in the background, even after closing the shell.
+
+<Warning>
+Windows users may not be able to use `screen`. Please find an alternative way to run Unifier Micro in the background, or use a server.
+</Warning>
+
+But before you run the bot, we recommend you add it to your **home server** (where the logging channels are located in). You can do this by copying your bot's client ID, then going to `https://discord.com/api/oauth2/authorize?client_id=<client_id>&permissions=537259008&scope=bot`. Remember to replace `<client_id>` with the bot's client ID!
+
+### Self-hosted
+
+First, open a `screen` instance by running `screen -S unifier`. This will open an empty shell. Then, change the screen's directory to wherever Unifier Micro is located by running `cd ./path/to/dir`, with `./path/to/dir` being the path of wherever you installed Unifier Micro. If Unifier Micro is located in a folder called `unifier` which is conveniently in the same folder that your shell is in, then you can run `cd ./unifier`.
+
+Once you have done that, run `python3 microfier.py` to run Unifier Micro. If it's running properly, then congratulations!
+
+<Info>
+You can manage the screen by running `screen -Dr unifier`.
+</Info>
+
+<Warning>
+Unifier Micro does **not** have a graceful shutdown command. To shutdown the bot, please Ctrl+C the process, or exit the screen using `screen -X -S unifier quit`.
+</Warning>
+
+### Managed
+
+<Info>
+This is a guide for the **Pterodactyl panel**, as many free hosting services use this panel. If your hosting service uses a different panel, please contact them for assistance.
+
+Additionally, this part of the guide assumes you have created a server already. If you haven't, please create a Python server.
+</Info>
+
+As Unifier Micro already has a requirements.txt file, you do not need to modify anything else except the App PY file and Python version. These options can be found in the **Startup** page.
+
+Change the App PY file value to `microfier.py`, and the Python version to Python 3.8 or later. We recommend using Python 3.11.
+
+Once you have done that, you can return to the **Console**, then press **Start** to start Unifier Micro. If it's running properly, then congratulations!
+
+## Further setup
+
+### Assigning moderators
+
+To help keep your chat clean, Unifier lets you add moderators that can delete messages and temporarily or permanently ban users from Unified Chat. Admins can assign them by running `u!addmod @user`, or unassign them by running `u!removemod @user`. The changes will be reflected in `data.json` automatically.
+
+### Making a room
+
+Unified Chat depends on "rooms". If you send something in a channel linked to the `main` room, they will be sent to all other channels linked to the same room.
+
+Rooms can be created by admins only. To create a room, run `u!make <room>`. You can add rules using `u!addrule <room> <rule>`, lock authors to admins only using `u!roomlock <room>`, and restrict people who can connect to your room to admins only by using `u!roomrestrict <room>`.
+
+Congratulations, your Unifier instance is ready to go! Follow the [Getting started for the official instance](../../setup/getting-started/) to connect your servers.

@@ -1,0 +1,55 @@
+---
+title: Moderation tools
+---
+
+# Moderation tools
+
+Unifier includes moderation tools that server moderators and users can use to help keep things clean and safe for everyone.
+
+## Remember: Use these tools sparingly
+
+If the case is something rather moderate, we would recommend asking the user to stop before you take any further action. This way, conflicts can be resolved without anyone needing to take action against anyone.
+
+However, if this does not help, you may need to take further action. This is where Unifier's moderation features kick in.
+
+## Our moderation tools
+
+There are many features you can use on Unifier to protect your server and Unifier Room from bad actors.
+
+### Message reporting
+
+If you believe a message is against Unifier's rules, you can always report the message. To do this, right click on the message, then hover over apps, then press "Report message". **Make sure you click the one in the Apps menu**, otherwise you may be reporting the message to Discord rather than your Unifier moderators (although you may need to report the message to Discord in some cases).
+
+<img src="../../assets/images/image (11).png" alt="" />
+
+Follow the instructions on the response you're given to report the message, and the instance's moderators will review it.
+
+<Warning>
+**Do note that the rules will differ between Unifier instances.** If something's against our rules, it may not be against another instance's rules. Keep this in mind when you use self-hosted Unifier instances.
+</Warning>
+
+### Delete message
+
+You can also delete the message from the server, if you don't want it there. Do note that this will **not** delete the messages sent to other servers, unless the message you're deleting is the [parent message](#user-content-fn-1)[^1].
+
+<Warning>
+Using the `/moderation delete` command and the Delete message button will not work, as they're for global deletions only. Only Unifier moderators and the message author can use this.
+</Warning>
+
+### User and server blocking (server-side)
+
+You can always block users and servers from interacting with your server by running `/moderation block user_id`. This will completely stop the user from sending the messages to your server until you `/moderation unblock` him.
+
+If the attacks are not from specific users, but from an entire **server**, you can also block the server instead of individual users.
+
+To find a user or server ID, right click on the message, hover over "Apps", then press "Identify origin", or run `/moderation identify message_id` where `message_id` is the ID of the message you want to get the origin of.
+
+### User and server blocking (Room-side)
+
+If you don't want a user or server to talk in your Room, you can always kick or ban them by running `/bridge roomkick <room> <server>` and `/bridge roomban <room> <server>`. Unlike server-side blocks, this will prevent the server from sending messages in the specific Room entirely.
+
+## Automatic moderation
+
+See [Filters](filters.md) and [Under Attack Mode / Automatic UAM](under-attack-mode.md#automatic-uam).
+
+[^1]: A parent message is the original message of the bridged messages.
