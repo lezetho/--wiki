@@ -13,7 +13,7 @@
       {
         "group": "Setup (existing instance)",
         "pages": [
-          "setup/introduction",
+          "setup/existing/introduction",
           {
             "group": "Installation",
             "pages": [
@@ -26,7 +26,7 @@
       {
         "group": "Setup (self-hosted)",
         "pages": [
-          "setup/introduction-selfhosted",
+          "setup/selfhosted/introduction",
           {
             "group": "Installation",
             "pages": [
