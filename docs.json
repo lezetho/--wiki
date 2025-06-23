@@ -13,7 +13,27 @@
       {
         "group": "Setup (existing instance)",
         "pages": [
-          "setup/getting-started"
+          "setup/introduction",
+          {
+            "group": "Installation",
+            "pages": [
+              "setup/existing/discord",
+              "setup/existing/revolt"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Setup (self-hosted)",
+        "pages": [
+          "setup/introduction-selfhosted",
+          {
+            "group": "Installation",
+            "pages": [
+              "setup/selfhosted/unifier",
+              "setup/selfhosted/unifier-micro"
+            ]
+          }
         ]
       }
     ],
