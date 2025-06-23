@@ -1,0 +1,17 @@
+# Under Attack Mode
+
+Unifier comes with an **Under Attack Mode (UAM)**, a feature that blocks all messages from your server from being bridged over Unifier in case of a server raid or similar events. This prevents attacks on your server from affecting other servers connected to the same Rooms as your server is.
+
+## Toggling UAM
+
+To enable UAM, you must have the **Ban Members** permission. But for disabling it, you must have the **Manage Channels** permission. This way, server moderators can quickly take action in case of a server raid, while server admins can sound the all clear once they have determined that the server is safe.
+
+You can toggle UAM by running `/moderation under-attack` or `u!moderation under-attack`. This feature is also available on Revolt.
+
+## Automatic UAM
+
+{% hint style="warning" %}
+If you haven't yet, please read the [Filters](filters.md) guide.
+{% endhint %}
+
+Unifier also has **Automatic UAM**, a feature that switches UAM on once a Room's [Filters](filters.md) have been triggered too many times. Server admins with the **Manage Channels** permission can toggle this by running `/moderation auto-under-attack` and view or change the threshold for Automatic UAM by running `/moderation filter-threshold`.

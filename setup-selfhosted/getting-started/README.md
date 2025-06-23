@@ -1,0 +1,79 @@
+# Getting Started
+
+This guide assumes you have already downloaded the source code from the GitHub repository ([Full](https://github.com/UnifierHQ/unifier)/[Micro](https://github.com/greeeen-dev/unifier-micro)). If not, please download it before proceeding with this guide.
+
+## Which version should I choose?
+
+{% hint style="info" %}
+We recommend you **first try out Unifier Micro** even if it doesn't fit your use case that well, as it is much easier to install and configure compared to the full version. This way, you can get to know what Unifier is like, and if it's a right fit for your communities.
+
+If you want to switch from one version to another, the `data.json` file is compatible with both versions, so you can easily move from one version to another.
+{% endhint %}
+
+Unifier comes in two versions: Full and Micro. Both versions are free to use and open source, so you can choose exactly what you need and customize it to your liking.
+
+You should use **Full** if:
+
+* You want to use Unifier for **communities of any scale**
+* You need **bridging functionality between Discord, Revolt, and Guilded**
+* You need **Posts** so people can share their achievements in an organized way
+
+You should use **Micro** if:
+
+* You want to use Unifier for **small communities**
+* Your communities **only use Discord and not Revolt or Guilded**
+* You want to **try out Unifier without spending too much time on installation**
+
+For a more detailed comparison, consult the [Unifier vs. Unifier Micro comparison](../../compare/unifier-vs.-unifier-micro.md).
+
+## Hosting Unifier
+
+To run Unifier 24/7, you need a host to run it on. This can be your computer, but you almost certainly want to run it on a **server**. Once you shut your PC down, so will your bot, but if you host the bot on a server, you can keep the server running to keep your bot alive.
+
+Hosts without console input and output access (such as Heroku) are **not supported**.
+
+### Managed hosting setup (Pterodactyl)
+
+To run an instance on a managed server, you should first create a server on your hosting provider. This can differ between hosts, so please ask your provider for help on this.
+
+Once you have created your server, you will need to upload a copy of Unifier to your server. First, go to **Files**, then press **Upload**, and then upload the ZIP file you have downloaded from GitHub. Press on the three dots on the ZIP file, then press **Unarchive** to unzip the ZIP file.
+
+{% hint style="danger" %}
+**Caution**: Our official GitHub repository is the only place where we provide official copies of Unifier. If you downloaded it from anywhere else, proceed with caution!
+
+In an official copy, you'll find **source code files, not binaries**, so if your copy comes with binaries (such as a .exe file), DO NOT RUN IT!
+{% endhint %}
+
+<figure><img src="../../.gitbook/assets/Screenshot 2024-05-03 at 14.24.39.png" alt=""><figcaption></figcaption></figure>
+
+This will create a folder called **unifier-v1.2.2-patch** or similar. If you wish, you may move the contents into the root folder, so the files are easier to work with.
+
+## Installing Unifier
+
+Please choose the version you wish to install.
+
+Remember, you can use the same `data.json` file for both versions, so you won't be locked in to one once you've installed it.
+
+{% content-ref url="unifier.md" %}
+[unifier.md](unifier.md)
+{% endcontent-ref %}
+
+{% content-ref url="unifier-micro.md" %}
+[unifier-micro.md](unifier-micro.md)
+{% endcontent-ref %}
+
+## Troubleshooting
+
+{% hint style="info" %}
+This section only includes troubleshooting info that applies to both Full and Micro. If none of these issues apply to you, please check the troubleshooting section for your version.
+{% endhint %}
+
+### Unifier lags after some inactivity
+
+This can happen on certain hosts where the network is throttled. To prevent your bot from lagging after inactivity, you can change the `ping` value in your config.json file.
+
+When this value is a positive integer, Unifier will ping Discord's servers every x seconds, with x being the value you've set. This prevents the bot from "idling" so your bot continues to run smoothly.
+
+### Unifier won't boot after an upgrade
+
+This has been moved to [Upgrading Unifier](../upgrading-unifier/#unifier-wont-boot-after-an-upgrade).

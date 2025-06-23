@@ -1,0 +1,15 @@
+# Global emojis
+
+Unifier has a feature called Global emojis, which allows Unifier users to use other servers' emojis, all without joining the source server or buying Nitro. Server admins have to opt-in to this feature to share their emojis with the entire Unifier network, so that they don't accidentally end up sharing emojis they don't want to share.
+
+## For server admins
+
+To allow other Unifier users to use your emojis, you can toggle it by by running `/config toggle-emoji`. This will either enable or disable emoji sharing, depending on what you set it to earlier.
+
+Once emoji sharing is on for your server, they will show up in `/bridge emojis`.
+
+## For members
+
+You can use global emojis by typing `[emoji: emojiname]` anywhere in your message, as if you were using a regular custom emoji on Discord.
+
+If you want a list of all emojis available, you can run `/bridge emojis [index]`.
