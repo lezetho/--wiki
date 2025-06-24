@@ -14,7 +14,7 @@
   "navigation": {
     "groups": [
       {
-        "group": "Setup (existing instance)",
+        "group": "Setting up",
         "icon": "rocket",
         "pages": [
           "setup/existing/introduction",
@@ -29,7 +29,7 @@
         ]
       },
       {
-        "group": "Setup (self-hosted)",
+        "group": "Self-hosting",
         "icon": "screwdriver-wrench",
         "pages": [
           "setup/selfhosted/introduction",
@@ -76,6 +76,38 @@
         ]
       },
       {
+        "group": "Modifiers",
+        "icon": "plug",
+        "pages": [
+          "modifiers/introduction",
+          {
+            "group": "Components",
+            "icon": "cubes-stacked",
+            "pages": [
+              "modifiers/components/custom-filters"
+            ]
+          },
+          {
+            "group": "Services",
+            "icon": "briefcase",
+            "pages": [
+              "modifiers/services/content-processing",
+              "modifiers/services/emojis"
+            ]
+          }
+        ]
+      },
+      {
+        "group": "Compare",
+        "icon": "list",
+        "pages": [
+          "compare/full-vs-micro",
+          "compare/vs-conventional",
+          "compare/platform-features",
+          "compare/benchmarks"
+        ]
+      },
+      {
         "group": "Legal",
         "icon": "section",
         "pages": [
@@ -119,7 +151,8 @@
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/UnifierHQ"
+      "github": "https://github.com/UnifierHQ",
+      "discord": "https://discord.unifierhq.org"
     }
   }
 }
