@@ -35,7 +35,7 @@ If you use v2, you will need to install the [Emergency Upgrader](https://github.
 
 No worries! Unifier comes with an auto-rollback system so the core and system extensions can continue running normally. Do note that Unifier will not be able to roll back plugins such as Upgrader and Revolt Support.
 
-If the automatic rollback fails, please perform a [manual rollback](manual-rollback.md).
+If the automatic rollback fails, please perform a [manual rollback](./upgrading/manual-rollback).
 
 ### Plugins won't upgrade
 
@@ -52,9 +52,9 @@ If you are using any older version, this is because these versions are no longer
 ### Unifier won't boot after an upgrade
 
 * **"To start the bot, please run "./run.sh" instead."**: From v3, Unifier has a new "bootloader" with many new features. You will need to run `./run.sh` (Linux/macOS) or `./run.bat` (Windows) in the terminal instead of `python3 unifier.py` to run Unifier.
-* **Could not load .env file**: If you've upgraded to v1.1.8 or newer from an earlier version, this is because we stopped using tokens in config files and switched to storing them in dotenv files for more security. You can find more info on how to upgrade [here](../getting-started/unifier.md#set-bot-token).
-* **Not AGPLv3 compliant**: If you've upgraded to v1.1.9 or newer from an earlier version, this is because we included code to make the bot **AGPLv3 compliant**. You can find more info on how to fix this [here](../modding-unifier-things-to-note.md#how-do-i-make-my-source-code-available).
+* **Could not load .env file**: If you've upgraded to v1.1.8 or newer from an earlier version, this is because we stopped using tokens in config files and switched to storing them in dotenv files for more security. You can find more info on how to upgrade [here](./unifier#set-bot-token).
+* **Not AGPLv3 compliant**: If you've upgraded to v1.1.9 or newer from an earlier version, this is because we included code to make the bot **AGPLv3 compliant**. You can find more info on how to fix this [here](./modding#how-do-i-make-my-source-code-available).
 
-If your issue does not fit in one of these common issues, your bot may be unable to reboot. To solve this, you need to perform a [manual rollback](manual-rollback.md).
+If your issue does not fit in one of these common issues, your bot may be unable to reboot. To solve this, you need to perform a [manual rollback](./upgrading/manual-rollback).
 
-Or, there may be new config keys that you need to configure. Check [here](../getting-started/unifier.md#configuration) (or [here](../getting-started/unifier-micro.md#configuration) for Micro) to see if you missed any variables.
+Or, there may be new config keys that you need to configure. Check [here](./unifier#configuration) (or [here](./unifier-micro#configuration) for Micro) to see if you missed any variables.
