@@ -17,13 +17,13 @@
         "group": "Setting up",
         "icon": "rocket",
         "pages": [
-          "setup/existing/introduction",
+          "setup/introduction",
           {
             "group": "Installation",
             "icon": "heart",
             "pages": [
-              "setup/existing/discord",
-              "setup/existing/revolt"
+              "setup/discord",
+              "setup/revolt"
             ]
           }
         ]
@@ -32,19 +32,38 @@
         "group": "Self-hosting",
         "icon": "screwdriver-wrench",
         "pages": [
-          "setup/selfhosted/introduction",
+          "selfhost/introduction",
           {
             "group": "Installation",
             "icon": "terminal",
             "pages": [
-              "setup/selfhosted/unifier",
-              "setup/selfhosted/unifier-micro"
+              "selfhost/unifier",
+              "selfhost/unifier-micro"
+            ]
+          },
+          {
+            "group": "Installing updates",
+            "icon": "cloud-arrow-down",
+            "pages": [
+              "selfhost/upgrading",
+              "selfhost/upgrading/manual-rollback"
+            ]
+          },
+          "selfhost/modding",
+          {
+            "group": "Unifier System",
+            "icon": "microchip",
+            "pages": [
+              "selfhost/system/bootloader-config",
+              "selfhost/system/data-backups",
+              "selfhost/system/python-versions",
+              "selfhost/system/secrets-management"
             ]
           }
         ]
       },
       {
-        "group": "Guides",
+        "group": "Using Unifier",
         "icon": "info",
         "pages": [
           {
@@ -61,16 +80,6 @@
               "guides/moderation/moderation-tools",
               "guides/moderation/filters",
               "guides/moderation/under-attack-mode"
-            ]
-          },
-          {
-            "group": "Unifier System",
-            "icon": "microchip",
-            "pages": [
-              "guides/system/bootloader-config",
-              "guides/system/data-backups",
-              "guides/system/python-versions",
-              "guides/system/secrets-management"
             ]
           }
         ]
