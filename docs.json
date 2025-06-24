@@ -15,10 +15,12 @@
     "groups": [
       {
         "group": "Setup (existing instance)",
+        "icon": "rocket",
         "pages": [
           "setup/existing/introduction",
           {
             "group": "Installation",
+            "icon": "heart",
             "pages": [
               "setup/existing/discord",
               "setup/existing/revolt"
@@ -28,10 +30,12 @@
       },
       {
         "group": "Setup (self-hosted)",
+        "icon": "screwdriver-wrench",
         "pages": [
           "setup/selfhosted/introduction",
           {
             "group": "Installation",
+            "icon": "terminal",
             "pages": [
               "setup/selfhosted/unifier",
               "setup/selfhosted/unifier-micro"
@@ -41,6 +45,7 @@
       },
       {
         "group": "Guides",
+        "icon": "info",
         "pages": [
           "setup/selfhosted/introduction",
           {
