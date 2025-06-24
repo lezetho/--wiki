@@ -47,14 +47,41 @@
         "group": "Guides",
         "icon": "info",
         "pages": [
-          "setup/selfhosted/introduction",
           {
-            "group": "Installation",
+            "group": "Bridge",
+            "icon": "link",
             "pages": [
-              "setup/selfhosted/unifier",
-              "setup/selfhosted/unifier-micro"
+              "guides/bridge/global-emojis"
+            ]
+          },
+          {
+            "group": "Moderation",
+            "icon": "user-shield",
+            "pages": [
+              "guides/moderation/moderation-tools",
+              "guides/moderation/filters",
+              "guides/moderation/under-attack-mode"
+            ]
+          },
+          {
+            "group": "Unifier System",
+            "icon": "microchip",
+            "pages": [
+              "guides/system/bootloader-config",
+              "guides/system/data-backups",
+              "guides/system/python-versions",
+              "guides/system/secrets-management"
             ]
           }
+        ]
+      },
+      {
+        "group": "Legal",
+        "icon": "section",
+        "pages": [
+          "legal/terms",
+          "legal/privacy",
+          "legal/guidelines"
         ]
       }
     ],
