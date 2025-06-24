@@ -7,6 +7,9 @@
     "light": "#07C983",
     "dark": "#15803D"
   },
+  "icons": {
+    "library": "fontawesome"
+  },
   "favicon": "/favicon.png",
   "navigation": {
     "groups": [
