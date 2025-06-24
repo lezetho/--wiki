@@ -1,9 +1,9 @@
 /*noinspection CssUnresolvedCustomProperty*/
 .bg-background-light {
-  background-color: color-mix(in srgb, rgb(var(--primary-light)) 25%, white);
+  background-color: color-mix(in srgb, rgb(var(--primary-light)) 15%, white);
 }
 
 /*noinspection CssUnresolvedCustomProperty*/
-.bg-background-dark {
+.dark\:bg-background-dark:is(.dark *) {
   background-color: color-mix(in srgb, rgb(var(--primary-light)) 15%, black);
 }
