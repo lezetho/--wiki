@@ -145,6 +145,18 @@
     "light": "/logo/light.svg",
     "dark": "/logo/dark.svg"
   },
+  "navbar": {
+    "links": [
+      {
+        "label": "Discord",
+        "href": "https://discord.unifierhq.org"
+      },
+      {
+        "label": "Revolt",
+        "href": "https://revolt.unifierhq.org"
+      }
+    ]
+  },
   "footer": {
     "socials": {
       "github": "https://github.com/UnifierHQ",
