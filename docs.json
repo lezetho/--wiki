@@ -129,14 +129,19 @@
     "global": {
       "anchors": [
         {
-          "anchor": "GitHub",
-          "href": "https://github.com/UnifierHQ",
-          "icon": "github"
+          "anchor": "Website",
+          "href": "https://unifierhq.org",
+          "icon": "globe"
         },
         {
-          "anchor": "Discord",
-          "href": "https://discord.unifierhq.org",
-          "icon": "discord"
+          "anchor": "Blog",
+          "href": "https://blog.unifierhq.org",
+          "icon": "book-bookmark"
+        },
+        {
+          "anchor": "Status",
+          "href": "https://status.unifierhq.org",
+          "icon": "heart-pulse"
         }
       ]
     }
