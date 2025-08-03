@@ -10,7 +10,7 @@
   "icons": {
     "library": "fontawesome"
   },
-  "favicon": "/favicon.png",
+  "favicon": "/logo/favicon.png",
   "navigation": {
     "groups": [
       {
@@ -147,8 +147,8 @@
     }
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/favicon circle.png",
+    "dark": "/logo/favicon circle.png"
   },
   "navbar": {
     "links": [
