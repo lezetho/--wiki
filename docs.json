@@ -29,7 +29,7 @@
         ]
       },
       {
-        "group": "Self-hosting",
+        "group": "Self Hosting",
         "icon": "screwdriver-wrench",
         "pages": [
           "selfhost/introduction",
