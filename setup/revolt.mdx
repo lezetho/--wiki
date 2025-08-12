@@ -6,7 +6,7 @@ icon: share-nodes
 <Danger>
 This guide assumes that your Unifier instance has the correct Platform Support Modifier installed (for Revolt, use the [Revolt Support Modifier](https://github.com/UnifierHQ/unifier-revolt)) and the command signatures of the platform is the same as Revolt Support's.
 
-Please reach out to your instance owner for assistance if needed.
+Please reach out to your instance operator(s) for assistance if needed.
 </Danger>
 
 <Info>
@@ -27,11 +27,11 @@ First, ensure that your Unifier instance has all the necessary permissions. For 
   Required for displaying attachments from bridged messages.
 * **Masquerade**\
   Required for Unifier to apply custom avatars and usernames to each bridged message.
-* _**(Optional) Manage Roles**_\
+* _(Optional) Manage Roles_\
   Required for Unifier to display user colors. If this permission is not given, the user color will be the same as Unifier's.
-* _**(Optional) Use external emojis**_\
+* _(Optional) Use external emojis_\
   Required for displaying user emojis, but not required for bot to function.
-* _**(Optional) Manage Messages**_\
+* _(Optional) Manage Messages_\
   Required for Global Emojis, but not required for basic bridging functionality.
 
 If any of these permissions are missing, **the bot may NOT work in your server**.
@@ -44,11 +44,11 @@ If you've already created a Private Room (regardless of the platform you've used
 
 Unifier lets you create Private Rooms for you and your friends and communities to chat together without having to worry about unwanted servers joining in.
 
-To create a Private Room, simply run `u!bridge create-room` to create a room. Your Room will be given a random name, which Unifier will send through the command response. **This is your Room name, which you can use to manage your Room settings.**
+To create a Private Room, simply run `u!bridge create-room` to create a room. Your room will be given a random name, which Unifier will send through the command response. **This is your room name which can be used to edit your room's settings.**
 
 <img src="../assets/images/image%20(29).png" alt="" />
 
-If Private Rooms aren't enabled on your instance, please contact your instance operators for assistance.
+If Private Rooms are not enabled on the instance you're using, please contact the instance's operator(s) for assistance.
 
 ### Creating Private Room invites
 
@@ -58,25 +58,31 @@ If you're trying to bind the server you created your Private Room in to your Pri
 If you're trying to bind to a Public Room, you don't need an invite regardless of the server (hence the "Public").
 </Info>
 
-For servers to join your Private Room, you will need to create an invite. You can create an invite by running `u!config create-invite`. You will need to provide the Room name when running the command.
+For servers to join your Private Room, you will need to create an invite. You can create an invite by running `u!config create-invite`, and you will be required to include a room name.
 
-Every invite, by default, is valid for 7 days and has unlimited uses. You can customize these if you wish.
+By default, every Private Room Invite is active for 7 days with unlimited uses, however you may customize it to your liking.
 
 <Warning>
-Although permanent invites (i.e. invites that don't expire) are available, they are not enabled by default. If you need this, please ask your instance's owners for assistance.
+Although permanent invites (i.e. invites that don't expire) are available, they are not enabled by default. If you need this, please ask your instance's operator(s) for assistance.
 </Warning>
 
-<Frame caption="private-1s1sxkl1eu is the room name, 3d is the validity of the invite, and 1 is the maximum usage of the invite. "><img src="../assets/images/image%20(30).png" alt="" /></Frame>
+<Frame caption="private-1s1sxkl1eu is the room name, 3d is how long the invite is active, and 1 is the maximum uses for this invite. "><img src="../assets/images/image%20(30).png" alt="" /></Frame>
 
-Once you run the command, Unifier will create an invite and send it to you through DMs. **This is your invite code.**
+Once the command has been ran, Unifier will create a invite to your Private Room and send it into your DMs.
+
+<Warning>
+We do not recommend sending your invite code to anyone unless you're inviting them to your Private Room. If the invite code is sent to someone you don't want to be invited, they can simply use the code to join your room whenever.
+
+If you end up leaking your room invite code to someone you don't want to invite, you can simply revoke the invite code by running `/config delete-invite <invite>`, where `<invite>` is the invite code.
+</Warning>
 
 <img src="../assets/images/image%20(13).png" alt="" />
 
-If you forget your invites, you can always run `u!config invites <room>` to view your Room's invites. Unifier will DM the Room's invites to you.
+If you forget your invites, you can always run `u!config invites <room>` to view your room's invites. Unifier will DM the room's invites to you.
 
 <img src="../assets/images/image%20(14).png" alt="" />
 
-## Connecting to rooms
+## Connecting to Rooms
 
 <Info>
 To bind to and unbind from rooms, you need **Manage Channel** permission.
@@ -88,26 +94,26 @@ To connect to a room, you will need a channel for the room. We recommend you cre
 After creating the channel, please make sure there are no channel permission overrides that **limit** Unifier's permissions (you do not need to check for overrides that **grant** additional permissions to Unifier).
 </Warning>
 
-Connecting to a Unifier room is simple and straightforward. You can see what rooms are available to you by running `u!bridge rooms`. If there are no rooms available, contact your instance admins for help.
+Connecting to a Unifier room is simple and straightforward. You can see what rooms are available to you by running `u!bridge rooms`. If there are no rooms available, contact your instance administrator(s) for help.
 
 In the channel you want to bind the Room to, run `u!bridge bind <room>`, where `<room>` is the name of the room you want to connect to, or if the room is a Private Room, an invite code to the Private Room.
 
-<Frame caption="For Public Rooms, type in the Room name."><img src="../assets/images/image%20(15).png" alt="" /></Frame>
+<Frame caption="For Public Rooms, type in the room name you want to connect to."><img src="../assets/images/image%20(15).png" alt="" /></Frame>
+‎ 
+<Frame caption="For Private Rooms, type in the room invite. You can use the room name if you're running the command in the same server you created the room in."><img src="../assets/images/image%20(16).png" alt="" /></Frame>
 
-<Frame caption="For Private Rooms, type in the Room invite. You can use the Room name if you're running the command in the same server you created the Room in."><img src="../assets/images/image%20(16).png" alt="" /></Frame>
-
-Before you bind the channel to the room, you'll need to accept the rules of the room. On Discord, you will need to press "Agree & Bind" to connect to the room.
+Before you bind the channel to the room, you'll need to accept the rules of the room. On Revolt (or the platform you're using), you will need to press "Agree & Bind" to connect to the room.
 
 Once you have completed your steps, your channel should be connected!
 
 <Warning>
-If you're done using an invite, **we strongly recommend you revoke it**. An invite will let any server join your Private Room.
+If you're done using an invite, **we strongly recommend you revoke it** in case someone has your room invite.
 
 To revoke an invite, run `u!config delete-invite <invite>` where `<invite>` is the invite code.
 </Warning>
 
 ## Troubleshooting
 
-### The bot won't bridge messages to Revolt!
+> **The bot won't bridge messages to Revolt!**
 
 This is a common issue. Usually, this is because you didn't grant the bot the Masquerade permission. Grant it and try again.
