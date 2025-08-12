@@ -1,7 +1,7 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "maple",
-  "name": "Unifier Wiki",
+  "name": "UnifierHQ Wiki",
   "colors": {
     "primary": "#ff4545",
     "light": "#ff838c",
@@ -14,7 +14,7 @@
   "navigation": {
     "groups": [
       {
-        "group": "Setting up",
+        "group": "Setting Up",
         "icon": "rocket",
         "pages": [
           "setup/introduction",
