@@ -27,12 +27,12 @@ First, ensure that your Unifier instance has all the necessary permissions. For 
   Required for displaying attachments from bridged messages.
 * **Manage webhooks**\
   Required for receiving bridged messages.
-* _**(Optional) Use external emojis**_\
-  Required for displaying user emojis, but not required for bot to function.
-* _**(Optional) Manage messages**_\
-  Required for Global Emojis, but not required for basic bridging functionality.
+* _(Optional) Use external emojis_\
+  Required for **displaying user emojis**, but not required for bot to function.
+* _(Optional) Manage messages_\
+  Required for **Global Emojis**, but not required for basic bridging functionality.
 
-If any of these permissions are missing, **the bot may NOT work in your server**.
+If any of these permissions are missing, **the bot may NOT fully work in your server**.
 
 <Danger>
 Under any circumstances, **do NOT grant Unifier the Administrator permission**. This permission is **EXTREMELY DANGEROUS**, and it should **NOT** be granted to any bot, not even Unifier.
@@ -50,37 +50,43 @@ If you've already created a Private Room (regardless of the platform you've used
 
 Unifier lets you create Private Rooms for you and your friends and communities to chat together without having to worry about unwanted servers joining in.
 
-To create a Private Room, simply run `/bridge create-room` to create a room. Your Room will be given a random name, which Unifier will send through the command response. **This is your Room name, which you can use to manage your Room settings.**
+To create a Private Room, simply run `/bridge create-room` to create a room. Your room will be given a random name, which Unifier will send through the command response. **This is your room name which can be used to edit your room's settings.**
 
 <img src="../assets/images/image%20(21).png" alt="" />
 
-If you want, you can always set a display name for this Room using `/config display-name`.
+There's an option to set a **display name** for your room. You can create/change your room's display name by using `/config display-name`.
 
-If Private Rooms aren't enabled on your instance, please contact your instance operators for assistance.
+If private rooms are not enabled on the instance you're using, please contact the instance's operator(s) for assistance.
 
-### Creating Private Room invites
+### Creating Private Room Invites
 
 <Info>
-If you're trying to bind the server you created your Private Room in to your Private Room, you don't need a Room invite for this. You will only need it for other servers.
+If you're trying to bind the server you created your Private Room in to your Private Room, you don't need a room invite for this. You will only need it for other servers.
 
 If you're trying to bind to a Public Room, you don't need an invite regardless of the server (hence the "Public").
 </Info>
 
-For servers to join your Private Room, you will need to create an invite. You can create an invite by running `/config create-invite`. You will need to provide the Room name when running the command.
+To allow other servers to join your room, you need to first create an invite for them to use. You can create an invite by running `/config create-invite`. While running this command, you will also need to put the room name in to create a invite.
 
-Every invite, by default, is valid for 7 days and has unlimited uses. You can customize these if you wish.
+By default, all invites are valid for 7 days and have unlimited uses. You may customize these settings if you wish to.
 
 <Warning>
-Although permanent invites (i.e. invites that don't expire) are available, they are not enabled by default. If you need this, please ask your instance's owners for assistance.
+Although permanent invites (i.e. invites that don't expire) are available, they are not enabled by default. If you need this, please ask your instance's operator(s) for assistance.
 </Warning>
 
 <img src="../assets/images/image%20(24).png" alt="" />
 
-Once you run the command, Unifier will create an invite and send it to you through DMs. **This is your invite code.**
+Once the command has been ran, Unifier will create a invite to your Private Room and send it into your DMs.
+
+<Warning>
+We do not recommend sending your invite code to anyone unless you're inviting them to your Private Room. If the invite code is sent to someone you don't want to be invited, they can simply use the code to join your room whenever.
+
+If you end up leaking your room invite code to someone you don't want to invite, you can simply revoke the invite code by running `/config delete-invite <invite>`, where `<invite>` is the invite code.
+</Warning>
 
 <img src="../assets/images/image%20(25).png" alt="" />
 
-If you forget your invites, you can always run `/config invites <room>` to view your Room's invites. Unifier will DM the Room's invites to you.
+If you forget your invites, you can always run `/config invites <room>` to view your room's invites. Unifier will DM the room's invites to you.
 
 <img src="../assets/images/image%20(26).png" alt="" />
 
@@ -96,26 +102,26 @@ To connect to a room, you will need a channel for the room. We recommend you cre
 After creating the channel, please make sure there are no channel permission overrides that **limit** Unifier's permissions (you do not need to check for overrides that **grant** additional permissions to Unifier).
 </Warning>
 
-Connecting to a Unifier room is simple and straightforward. You can see what rooms are available to you by running `/bridge rooms`. If there are no rooms available, contact your instance admins for help.
+Connecting to a Unifier room is simple and straightforward. You can see what rooms are available to you by running `/bridge rooms`. If there are no rooms available, contact your instance administrator(s) for help.
 
 In the channel you want to bind the Room to, run `/bridge bind room:<room>`, where `<room>` is the name of the room you want to connect to, or if the room is a Private Room, an invite code to the Private Room.
 
-<Frame caption="For Public Rooms, type in the Room name."><img src="../assets/images/image%20(28).png" alt="" /></Frame>
-
-<Frame caption="For Private Rooms, type in the Room invite. You can use the Room name if you're running the command in the same server you created the Room in."><img src="../assets/images/image%20(27).png" alt="" /></Frame>
+<Frame caption="For Public Rooms, type in the room name you want to connect to."><img src="../assets/images/image%20(28).png" alt="" /></Frame>
+‎ 
+<Frame caption="For Private Rooms, type in the room invite. You can use the room name if you're running the command in the same server you created the room in."><img src="../assets/images/image%20(27).png" alt="" /></Frame>
 
 Before you bind the channel to the room, you'll need to accept the rules of the room. On Discord, you will need to press "Agree & Bind" to connect to the room.
 
 Once you have completed your steps, your channel should be connected!
 
 <Warning>
-If you're done using an invite, **we strongly recommend you revoke it**. An invite will let any server join your Private Room.
+If you're done using an invite, **we strongly recommend you revoke it** in case someone has your room invite.
 
 To revoke an invite, run `/config delete-invite <invite>` where `<invite>` is the invite code.
 </Warning>
 
 ## Troubleshooting
 
-### I can't ping anyone over the Bridge!
+> **I can't ping anyone over the Bridge!**
 
-This is **intentional behavior** to prevent duplicate pinging and cross-server raids. All messages sent through the bridge cannot ping anyone in any server, even if the correct mention is in the message.
+This is an **intentional behavior** to prevent duplicate pinging and cross-server raids. All messages sent through the bridge cannot ping anyone in any server, even if the correct mention is in the message.
